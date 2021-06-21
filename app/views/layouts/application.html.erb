@@ -11,6 +11,10 @@
 
   <body>
 
+
+      <li>
+        <%= link_to "Users", users_path %>
+      </li>
     <% if user_signed_in? %>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
