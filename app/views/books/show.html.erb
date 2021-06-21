@@ -17,13 +17,21 @@
 <h1>Book details</h1>
 <table>
   <tr>
-    <td><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg' %></td>
+    <td>
+      <%= link_to user_path(@user) %>
+        <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg' %>
+      <% end %>
+    </td>
     <td><%= @book1.title %></td>
     <td><%= @book1.body %></td>
     <td><%= link_to 'edit', edit_book_path(@book1) %></td>
     <td><%= link_to 'destroy', book_path(@book1), method: :delete %></td>
   </tr>
   <tr>
-    <td><%= @user.name %></td>
+    <td>
+      <%= link_to user_path(@user) %>
+        <%= @user.name %>
+      <% end %>
+    </td>
   </tr>
 </table>
