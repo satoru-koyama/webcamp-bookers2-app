@@ -1,3 +1,16 @@
+<% if @book1.errors.any? %>
+  <div id = "error_explanation">
+    <h2>
+      <%= pluralize(@book1.errors.count, "error")%> prohibited this obj from being saved:
+    </h2>
+    <ul>
+      <% @book1.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1>User info</h1>
 <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg' %>
 <p><%= @user.name %></p>
