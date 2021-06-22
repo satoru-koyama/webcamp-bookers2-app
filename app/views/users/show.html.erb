@@ -1,3 +1,5 @@
+<%= flash[:user_update] %>
+
 <h1>User info</h1>
 <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpeg' %>
 <p><%= @user.name %></p>
