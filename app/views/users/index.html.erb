@@ -5,10 +5,17 @@
   <tr>
     <th>image</th>
     <th>name</th>
+    <th></th>
   </tr>
   <% @users.each do |user| %>
     <tr>
-      <td><%= attachment_image_tag user, :profile_image, :fill, 300, 300, format: 'jpeg' %></td>
+      <td>
+        <% if user.profile_image == nil %>
+          <p>NoImage</p>
+        <% else %>
+          <%= attachment_image_tag user, :profile_image, :fill, 300, 300, format: 'jpeg' %>
+        <% end %>
+      </td>
       <td><%= user.name %></td>
       <td><%= link_to 'show', user_path(user) %></td>
     </tr>

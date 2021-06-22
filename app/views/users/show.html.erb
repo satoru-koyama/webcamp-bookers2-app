@@ -5,12 +5,19 @@
 <h1>Books</h1>
 <table>
   <tr>
+    <th></th>
     <th>Title</th>
     <th>Opinion</th>
   </tr>
   <% @books.each do |book| %>
     <tr>
-      <td><%= attachment_image_tag book.user, :profile_image, :fill, 300, 300, format: 'jpeg' %></td>
+      <td>
+        <% if @user.profile_image == nil %>
+          <p>NoImage</p>
+        <% else %>
+          <%= attachment_image_tag book.user, :profile_image, :fill, 300, 300, format: 'jpeg' %>
+        <% end %>
+      </td>
       <td><%= link_to "#{book.title}", book_path(book) %></td>
       <td><%= book.body %></td>
     </tr>

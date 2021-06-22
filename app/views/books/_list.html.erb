@@ -1,5 +1,9 @@
 <h1>User info</h1>
-<%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg' %>
+<% if user.profile_image == nil %>
+  <p>NoImage</p>
+<% else %>
+  <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg' %>
+<% end %>
 <p><%= user.name %></p>
 <p><%= user.introduction %></p>
 <%= link_to 'edit', edit_user_path(user) %>
