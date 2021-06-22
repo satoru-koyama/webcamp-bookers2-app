@@ -11,21 +11,7 @@
   </div>
 <% end %>
 
-<h1>User info</h1>
-<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg' %>
-<p><%= @user.name %></p>
-<p><%= @user.introduction %></p>
-<%= link_to 'edit', edit_user_path(@user) %>
-
-
-<h1>New book</h1>
-<%= form_with model: @book, local: true do |f| %>
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title %>
-  <%= f.label :body, "Opinion" %>
-  <%= f.text_field :body %>
-  <%= f.submit "Create Book" %>
-<% end %>
+<%= render 'books/list', user: @user, book: @book %>
 
 <h1>Books</h1>
 <table>
