@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/home/about', to: 'homes#about'
   resources :books
   resources :users, except: [:destroy, :new, :create]
-
+  
 end
