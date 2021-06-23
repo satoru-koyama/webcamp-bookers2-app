@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <%= flash[:book_create] %>
+        <%= flash[:notice] %>
         <%= render 'books/list', user: @user, book: @book %>
       </div>
       <div class="col-md-8 offset-md-1">
@@ -20,12 +20,12 @@
                 <td><%= @book1.body %></td>
                 <td>
                   <% if @book1.user_id == current_user.id %>
-                    <%= link_to 'edit', edit_book_path(@book1) %>
+                    <%= link_to 'Edit', edit_book_path(@book1), class: "btn btn-sm btn-primary" %>
                   <% end %>
                 </td>
                 <td>
                   <% if @book1.user_id == current_user.id %>
-                    <%= link_to 'destroy', book_path(@book1), method: :delete %>
+                    <%= link_to 'Destroy', book_path(@book1), method: :delete, class: "btn btn-sm btn-primary" %>
                   <% end %>
                 </td>
               </tr>
